@@ -1,0 +1,78 @@
+{
+  "roadmap": [
+    {
+      "step": 1,
+      "title": "Master Python Fundamentals",
+      "description": "Complete the 'Python for Beginners' course by Mosh to solidify your Python basics",
+      "link": "https://www.youtube.com/watch?v=_uQrJ0TkZlc",
+      "duration": "6 hours",
+      "skill_category": "Python"
+    },
+    {
+      "step": 2,
+      "title": "Learn Data Analysis with Python",
+      "description": "Take the 'Data Analysis with Python' course by IBM on Coursera to build a strong foundation in data science",
+      "link": "https://www.coursera.org/learn/data-analysis-with-python",
+      "duration": "5 weeks",
+      "skill_category": "Data Analysis"
+    },
+    {
+      "step": 3,
+      "title": "Introduction to Machine Learning",
+      "description": "Complete Andrew Ng's 'Machine Learning' course on Coursera to understand ML fundamentals",
+      "link": "https://www.coursera.org/learn/machine-learning",
+      "duration": "11 weeks",
+      "skill_category": "Machine Learning"
+    },
+    {
+      "step": 4,
+      "title": "Visual Machine Learning Concepts",
+      "description": "Study the 'Illustrated Machine Learning' website to reinforce ML concepts visually",
+      "link": "https://illustrated-machine-learning.github.io/",
+      "duration": "2 weeks",
+      "skill_category": "Machine Learning"
+    },
+    {
+      "step": 5,
+      "title": "Applied Data Science with Python",
+      "description": "Enroll in the 'Applied Data Science with Python Specialization' on Coursera to gain practical skills",
+      "link": "https://www.coursera.org/specializations/data-science-python",
+      "duration": "5 months",
+      "skill_category": "Data Science"
+    },
+    {
+      "step": 6,
+      "title": "UAE-Focused Data Science Project",
+      "description": "Develop a data science project aligned with UAE's AI strategy, using open data from the UAE government",
+      "link": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/federal-governments-strategies-and-plans/uae-strategy-for-artificial-intelligence",
+      "duration": "1 month",
+      "skill_category": "Data Science"
+    },
+    {
+      "step": 7,
+      "title": "Improve Public Speaking Skills",
+      "description": "Join a local Toastmasters club in the UAE to enhance your public speaking abilities",
+      "link": "https://www.toastmasters.org/find-a-club?q=United+Arab+Emirates",
+      "duration": "3 months",
+      "skill_category": "Soft Skills"
+    }
+  ],
+  "additional_resources": [
+    {
+      "title": "Abu Dhabi Government Digital Strategy 2025-2027",
+      "description": "Familiarize yourself with Abu Dhabi's digital transformation plans to align your skills with local needs",
+      "link": "https://www.mediaoffice.abudhabi/en/government-affairs/abu-dhabi-government-launches-digital-strategy-2025-2027/"
+    },
+    {
+      "title": "DataCamp's Data Scientist Career Track",
+      "description": "A comprehensive curriculum covering various aspects of data science",
+      "link": "https://www.datacamp.com/tracks/data-scientist-with-python"
+    },
+    {
+      "title": "Kaggle Learn",
+      "description": "Free, hands-on data science courses and competitions",
+      "link": "https://www.kaggle.com/learn"
+    }
+  ]
+}
+
