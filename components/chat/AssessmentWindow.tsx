@@ -1,3 +1,4 @@
+// AssessmentWindow.tsx
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
@@ -6,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import LearningStylePreference from './LearningStylePreference'
 import SkillInput from './SkillInput'
 import { Rocket, Loader } from 'lucide-react'
+import { useRouter } from 'next/navigation' // Changed from redirect to useRouter
 
 interface AssessmentWindowProps {
   prompt: string
@@ -18,23 +20,25 @@ const springTransition = {
 }
 
 export default function AssessmentWindow({ prompt }: AssessmentWindowProps) {
+  const router = useRouter() // Added client-side router
   const [step, setStep] = useState(1)
   const [learningStyle, setLearningStyle] = useState('')
   const [skills, setSkills] = useState<{ skill: string; level: string }[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleComplete = () => {
+  // Accept selectedSkills as parameter
+  const handleComplete = (selectedSkills: { skill: string; level: string }[]) => {
     setIsSubmitting(true)
     const userInfo = {
       prompt,
       learningStyle,
-      skills,
+      skills: selectedSkills,
     }
 
-    // Store in localStorage
+    console.log('Saving skills:', selectedSkills) // Debug log
     localStorage.setItem('userInfo', JSON.stringify(userInfo))
 
-    fetch('/api/assessment', {
+    fetch('http://localhost:8000/get_roadmap', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -44,11 +48,14 @@ export default function AssessmentWindow({ prompt }: AssessmentWindowProps) {
     .then(response => response.json())
     .then(data => {
       console.log('API response:', data)
+      localStorage.setItem('roadmap', JSON.stringify(data))
       setIsSubmitting(false)
+      router.push('/dashboard/roadmap') // Client-side navigation
     })
     .catch(error => {
       console.error('Error:', error)
       setIsSubmitting(false)
+      router.push('/dashboard/roadmap') // Client-side navigation
     })
   }
 
@@ -118,7 +125,7 @@ export default function AssessmentWindow({ prompt }: AssessmentWindowProps) {
                   <SkillInput 
                     onComplete={(selectedSkills) => {
                       setSkills(selectedSkills)
-                      handleComplete()
+                      handleComplete(selectedSkills) // Pass skills directly
                     }} 
                   />
                 )}

@@ -1,3 +1,4 @@
+// SkillInput.tsx
 import { useState } from 'react'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -21,7 +22,7 @@ export default function SkillInput({ onComplete }: SkillInputProps) {
 
   const handleAddSkill = (level: string) => {
     if (currentSkill.trim()) {
-      setSkills([...skills, { skill: currentSkill.trim(), level }])
+      setSkills(prev => [...prev, { skill: currentSkill.trim(), level }])
       setCurrentSkill('')
     }
   }
